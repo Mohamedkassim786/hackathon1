@@ -15,18 +15,24 @@ except ImportError:
 
 # --- PAGE CONFIG ---
 st.set_page_config(
-    page_title="City AI • AIMS Dashboard",
+    page_title="Academia AI • Intelligence Dashboard",
     page_icon="🎓",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
-# --- PREMIUM SAAS CSS ---
-st.markdown("""
+# --- STATE MANAGEMENT ---
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+if "counselor_flow" not in st.session_state:
+    st.session_state.counselor_flow = False
+
+# --- PREMIUM SAAS ENGINE ---
+st.markdown(f"""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
     
-    :root {
+    :root {{
         --primary-accent: #6366f1;
         --secondary-accent: #a855f7;
         --bg-deep: #030712;
@@ -35,50 +41,50 @@ st.markdown("""
         --text-primary: #f9fafb;
         --text-secondary: #9ca3af;
         --glow-strength: 20px;
-    }
+    }}
 
     /* Global Reset */
-    .main {
+    .main {{
         background-color: var(--bg-deep);
         color: var(--text-primary);
         font-family: 'Plus Jakarta Sans', sans-serif;
-    }
+    }}
 
-    [data-testid="stAppViewContainer"] {
-        background: radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
-                    radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+    [data-testid="stAppViewContainer"] {{
+        background: radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 40%),
+                    radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 40%),
                     var(--bg-deep);
         background-attachment: fixed;
-    }
+    }}
 
     /* Hide Streamlit elements */
-    [data-testid="stHeader"] { background: transparent; }
-    #MainMenu { visibility: hidden; }
-    footer { visibility: hidden; }
+    [data-testid="stHeader"] {{ background: transparent; }}
+    #MainMenu {{ visibility: hidden; }}
+    footer {{ visibility: hidden; }}
 
     /* Typography */
-    h1, h2, h3 {
+    h1, h2, h3 {{
         font-family: 'Space Grotesk', sans-serif;
         color: var(--text-primary);
-    }
+    }}
 
-    .hero-title {
+    .hero-title {{
         font-size: 3.5rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+        background: linear-gradient(135deg, var(--text-primary) 0%, var(--secondary-accent) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         line-height: 1.1;
         margin-bottom: 0.5rem;
-    }
+    }}
 
-    .hero-subtitle {
+    .hero-subtitle {{
         font-size: 1.2rem;
         color: var(--text-secondary);
         margin-bottom: 2rem;
-    }
+    }}
 
-    .status-badge {
+    .status-badge {{
         display: inline-flex;
         align-items: center;
         gap: 8px;
@@ -90,99 +96,83 @@ st.markdown("""
         font-size: 0.85rem;
         font-weight: 600;
         margin-bottom: 2rem;
-    }
+    }}
 
     /* Glass Cards */
-    .glass-card {
+    .glass-card {{
         background: var(--glass-bg);
         backdrop-filter: blur(12px);
         border: 1px solid var(--glass-border);
-        border-radius: 20px;
+        border-radius: 24px;
         padding: 1.5rem;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-    }
+        justify-content: flex-start;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }}
 
-    .glass-card:hover {
-        transform: translateY(-8px) scale(1.02);
-        border-color: rgba(99, 102, 241, 0.4);
-        box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5),
-                    0 0 20px rgba(99, 102, 241, 0.1);
-    }
+    .glass-card:hover {{
+        transform: translateY(-5px);
+        border-color: rgba(99, 102, 241, 0.3);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        background: rgba(255, 255, 255, 0.03);
+    }}
 
     /* Card Titles */
-    .card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .card-title { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
-    .card-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; }
+    .card-icon {{ font-size: 1.8rem; margin-bottom: 1rem; }}
+    .card-title {{ font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }}
+    .card-desc {{ font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }}
 
-    /* Quick Start Column */
-    .quick-start-container {
-        padding-left: 2rem;
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    /* Dividers */
-    .glowing-divider {
-        height: 1px;
-        width: 100%;
-        background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
-        margin: 3rem 0;
-    }
+    /* Sidebar Styling */
+    [data-testid="stSidebar"] {{
+        background-color: var(--bg-deep);
+        border-right: 1px solid var(--glass-border);
+    }}
 
     /* Chat Area */
-    .stChatMessage {
-        background: rgba(255, 255, 255, 0.02) !important;
-        border: 1px solid rgba(255, 255, 255, 0.05) !important;
-        border-radius: 16px !important;
-        padding: 1rem !important;
-    }
+    .stChatMessage {{
+        background: var(--glass-bg) !important;
+        border: 1px solid var(--glass-border) !important;
+        border-radius: 20px !important;
+        padding: 1.2rem !important;
+        margin-bottom: 1rem !important;
+    }}
 
     /* Chat Input */
-    .stChatInputContainer {
-        border-radius: 16px !important;
+    .stChatInputContainer {{
+        border-radius: 100px !important;
         border: 1px solid var(--glass-border) !important;
-        background: rgba(255, 255, 255, 0.03) !important;
-        backdrop-filter: blur(20px);
-        transition: all 0.3s ease;
-    }
-    
-    .stChatInputContainer:focus-within {
-        border-color: var(--primary-accent) !important;
-        box-shadow: 0 0 15px rgba(99, 102, 241, 0.15) !important;
-    }
-
-    /* Styled Buttons as Cards */
-    .stButton > button {
         background: var(--glass-bg) !important;
-        color: white !important;
+        backdrop-filter: blur(20px);
+        padding: 5px 15px !important;
+    }}
+    
+    .stChatInputContainer textarea {{
+        color: var(--text-primary) !important;
+    }}
+    
+    /* Styled Buttons */
+    .stButton > button {{
+        background: var(--glass-bg) !important;
+        color: var(--text-primary) !important;
         border: 1px solid var(--glass-border) !important;
-        border-radius: 16px !important;
-        padding: 1rem !important;
+        border-radius: 12px !important;
+        padding: 0.75rem 1rem !important;
         text-align: left !important;
         display: block !important;
         width: 100% !important;
-        transition: all 0.3s ease !important;
-        height: auto !important;
-    }
+        transition: all 0.2s ease !important;
+    }}
 
-    .stButton > button:hover {
+    .stButton > button:hover {{
         border-color: var(--primary-accent) !important;
-        transform: translateY(-4px) !important;
-        background: rgba(99, 102, 241, 0.05) !important;
-        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3) !important;
-    }
+        background: rgba(99, 102, 241, 0.1) !important;
+    }}
 </style>
 """, unsafe_allow_html=True)
-
-# --- STATE MANAGEMENT ---
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-if "counselor_flow" not in st.session_state:
-    st.session_state.counselor_flow = False
 
 # --- UTILS ---
 def clear_chat():
@@ -203,39 +193,13 @@ def get_engine(model):
     except:
         return None
 
-# --- HERO & NAVIGATION (2-COLUMN) ---
-col_left, col_right = st.columns([0.65, 0.35])
+# --- HERO SECTION ---
+st.markdown('<div class="status-badge">● Academia AI Engine Online • Private • Secure</div>', unsafe_allow_html=True)
+st.markdown('<h1 class="hero-title">Academia AI</h1>', unsafe_allow_html=True)
+st.markdown('<p class="hero-subtitle">The intelligent layer for your academic excellence. Streamlined, secure, and always at your service.</p>', unsafe_allow_html=True)
 
-with col_left:
-    st.markdown('<div class="status-badge">● AI Engine Online • Private • Secure</div>', unsafe_allow_html=True)
-    st.markdown('<h1 class="hero-title">City AI<br>AIMS Assistant</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="hero-subtitle">The next-generation intelligence layer for your academic journey. Streamlined, secure, and context-aware.</p>', unsafe_allow_html=True)
-
-    st.markdown("### 🎓 Explore Ecosystem")
-    # Explore Cards Grid
-    exp_col1, exp_col2 = st.columns(2)
-    
-    explore_cards = [
-        {"icon": "📝", "title": "Admissions", "desc": "Check eligibility and process", "query": "What is the admission and eligibility process?"},
-        {"icon": "📚", "title": "Programmes", "desc": "Explore courses and durations", "query": "List all available programmes and courses"},
-        {"icon": "🏫", "title": "Facilities", "desc": "Campus labs and digital library", "query": "Tell me about the campus facilities and infrastructure"},
-        {"icon": "📖", "title": "Services", "desc": "Mentorship and student portal", "query": "What academic services and practices do you offer?"},
-        {"icon": "💼", "title": "Placements", "desc": "Average package and recruiters", "query": "What are the student outcomes and placement stats?"},
-        {"icon": "🧑‍🏫", "title": "Counselor", "desc": "Book an academic session", "action": "counselor"}
-    ]
-
-    for i, card in enumerate(explore_cards):
-        target_col = exp_col1 if i % 2 == 0 else exp_col2
-        with target_col:
-            if st.button(f"{card['icon']} {card['title']}\n{card['desc']}", key=f"exp_{i}", use_container_width=True):
-                if card.get("action") == "counselor":
-                    st.session_state.counselor_flow = True
-                    # We don't rerun yet, let the UI handle it below
-                else:
-                    send_query(card["query"])
-
-with col_right:
-    st.markdown('<div class="quick-start-container">', unsafe_allow_html=True)
+# --- SIDEBAR (QUICK START) ---
+with st.sidebar:
     st.markdown("### ✨ Try Asking")
     
     quick_queries = [
@@ -250,10 +214,32 @@ with col_right:
         if st.button(f"🚀 {item['title']}", key=f"quick_{i}", use_container_width=True):
             send_query(item["q"])
     
-    st.markdown('<br>', unsafe_allow_html=True)
+    st.markdown('---')
     if st.button("🗑️ Reset Assistant", use_container_width=True):
         clear_chat()
-    st.markdown('</div>', unsafe_allow_html=True)
+
+# --- EXPLORE ECOSYSTEM ---
+st.markdown("### 🎓 Explore Ecosystem")
+exp_col1, exp_col2, exp_col3 = st.columns(3)
+
+explore_cards = [
+    {"icon": "📝", "title": "Admissions", "desc": "Check eligibility and process", "query": "What is the admission and eligibility process?"},
+    {"icon": "📚", "title": "Programmes", "desc": "Explore courses and durations", "query": "List all available programmes and courses"},
+    {"icon": "🏫", "title": "Facilities", "desc": "Campus labs and digital library", "query": "Tell me about the campus facilities and infrastructure"},
+    {"icon": "📖", "title": "Services", "desc": "Mentorship and student portal", "query": "What academic services and practices do you offer?"},
+    {"icon": "💼", "title": "Placements", "desc": "Average package and recruiters", "query": "What are the student outcomes and placement stats?"},
+    {"icon": "🧑‍🏫", "title": "Counselor", "desc": "Book an academic session", "action": "counselor"}
+]
+
+for i, card in enumerate(explore_cards):
+    target_col = [exp_col1, exp_col2, exp_col3][i % 3]
+    with target_col:
+        # Use a more modern card style with smaller buttons or clickable areas
+        if st.button(f"{card['icon']} {card['title']}\n{card['desc']}", key=f"exp_{i}", use_container_width=True):
+            if card.get("action") == "counselor":
+                st.session_state.counselor_flow = True
+            else:
+                send_query(card["query"])
 
 # --- DIVIDER ---
 st.markdown('<div class="glowing-divider"></div>', unsafe_allow_html=True)
@@ -291,7 +277,7 @@ for message in st.session_state.messages:
             st.markdown(f"**{message['content']}**")
 
 # Handle new user input
-if prompt := st.chat_input("Message AIMS Assistant..."):
+if prompt := st.chat_input("Ask Academia AI anything..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.rerun()
 
@@ -299,7 +285,7 @@ if prompt := st.chat_input("Message AIMS Assistant..."):
 if st.session_state.messages and st.session_state.messages[-1]["role"] == "user":
     with st.chat_message("assistant"):
         if engine:
-            with st.spinner("Analyzing knowledge bank..."):
+            with st.spinner("Processing Academic Query..."):
                 current_q = st.session_state.messages[-1]["content"]
                 history = [
                     HumanMessage(content=m["content"]) if m["role"]=="user" else AIMessage(content=m["content"])
@@ -320,6 +306,6 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
 # Footer
 st.markdown("""
 <div style="text-align: center; color: var(--text-secondary); font-size: 0.8rem; margin-top: 6rem; padding-bottom: 2rem;">
-    Enterprise Standard AIMS Assistant • v3.8 Platinum • Private LLM Instance
+    Academia AI • Enterprise Intelligence • Private Instance
 </div>
 """, unsafe_allow_html=True)
