@@ -1,0 +1,44 @@
+# AIMS - Academic Information Management System Knowledge Base
+
+## Admissions and Eligibility
+The Academic Information Management System (AIMS) oversees the admission process for all undergraduate and postgraduate programmes.
+- **Eligibility Criteria (Undergraduate)**: Minimum 70% in high school (10+2) with core subjects related to the chosen field. For Engineering, Mathematics and Physics are mandatory.
+- **Eligibility Criteria (Postgraduate)**: Minimum 60% in a relevant Bachelor's degree.
+- **Application Process**: 
+  1. Register on the official AIMS portal.
+  2. Upload necessary documents (transcripts, ID proof).
+  3. Pay the application fee ($50).
+  4. Schedule an entrance interview/test if applicable.
+- **Deadlines**: Fall intake (August) - May 31st; Spring intake (January) - October 15th.
+
+## Programmes and Courses
+AIMS manages a diverse range of programmes:
+1. **B.Tech in Computer Science**: Focuses on AI, Cybersecurity, and Software Engineering. (4-year programme).
+2. **B.Sc in Data Science**: Heavily focused on statistics and big data analytics. (3-year programme).
+3. **MBA in Digital Marketing**: Prepares students for leadership in the digital economy. (2-year programme).
+4. **B.Des in UI/UX Design**: Combines creative arts with technical usability. (4-year programme).
+
+## Facilities and Infrastructure
+- **Computing Labs**: High-performance workstations equipped with the latest software development tools.
+- **Digital Library**: Access to over 50,000 journals and 1 million e-books, open 24/7.
+- **Innovation Hub**: A dedicated space for student startups and research projects.
+- **Sports Complex**: Includes an Olympic-sized swimming pool, indoor stadium, and gym.
+- **Hostel Accommodation**: Modern, air-conditioned rooms with high-speed Wi-Fi.
+
+## Academic Practices and Services
+- **Mentorship Programme**: Every student is assigned a faculty mentor for academic and career guidance.
+- **Credit System**: A flexible choice-based credit system (CBCS) allowing students to take interdisciplinary electives.
+- **Student Portal**: A centralized system for tracking attendance, grades, and fee payments.
+
+## Student Outcomes and Placements
+- **Placement Cell**: Actively coordinates with top-tier companies for internships and full-time roles.
+- **Top Recruiters**: Tech giants, consulting firms, and creative agencies.
+- **Average Package**: $85,000 for Engineering graduates; $75,000 for Business graduates.
+- **Alumni Network**: A global network of 10,000+ alumni providing networking opportunities.
+
+## Appointment with Academic Counselor
+To book a session with a counselor, please provide:
+1. Student Name
+2. Inquiry Type (Admission, Course Choice, Career Guidance)
+3. Preferred Date and Time
+Once provided, the AIMS assistant will coordinate with the academic office.
