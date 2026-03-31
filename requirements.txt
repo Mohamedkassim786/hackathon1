@@ -5,3 +5,5 @@ langchain-ollama
 faiss-cpu
 python-dotenv
 tiktoken
+pytesseract
+Pillow

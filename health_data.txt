@@ -1,0 +1,270 @@
+# ArogyaAI — Healthcare Knowledge Base
+
+## Common Symptoms and What They Mean
+
+### Fever
+A fever is a temporary rise in body temperature, usually a sign the body is fighting an infection.
+- Low-grade fever: 99°F–100.4°F (37.2°C–38°C)
+- Moderate fever: 100.4°F–102.2°F (38°C–39°C)
+- High fever: Above 102.2°F (39°C)
+- Seek emergency care: Above 104°F (40°C) in adults, or any fever in infant under 3 months.
+Signs: Sweating, chills, headache, muscle aches, loss of appetite, dehydration, weakness.
+
+### Headache
+Headaches can be tension-type (most common), migraines, cluster headaches, or secondary (caused by another illness).
+- Tension headache: dull, aching pressure around the head, tight feeling in neck and scalp.
+- Migraine: throbbing on one side, sensitivity to light and sound, nausea, lasts 4–72 hours.
+- Cluster headache: severe burning pain around one eye, happens in clusters/cycles.
+Warning signs to see a doctor immediately: sudden severe "thunderclap" headache, headache after head injury, headache with stiff neck/fever/confusion.
+
+### Cold (Common Cold)
+Caused by rhinovirus. Usually mild and clears in 7–10 days.
+Symptoms: Runny or stuffy nose, sore throat, cough, mild body aches, mild headache, sneezing, low-grade fever, generally feeling unwell.
+
+### Cough
+A cough is a reflex to clear the airway.
+- Dry cough: often from viral infections, allergies, or acid reflux.
+- Wet cough (productive): produces mucus, often from respiratory infections.
+- Chronic cough (lasting >8 weeks): see a doctor.
+- Cough with blood or severe breathing difficulty: seek emergency care immediately.
+
+### Stomach Pain / Abdominal Pain
+Common causes: Indigestion, gas, constipation, diarrhea, food poisoning, ulcers.
+Seek doctor urgently if: severe sudden pain, pain with vomiting blood, rigid abdomen, pain after injury.
+
+### Diarrhea
+Loose, watery stools occurring more than 3 times a day.
+Causes: viral/bacterial infection, food intolerance, medications.
+Key risk: dehydration — drink plenty of clear fluids (ORS solution, water, coconut water).
+See doctor if: diarrhea lasts more than 2 days, blood in stool, severe dehydration signs (no urination, sunken eyes, extreme thirst).
+
+### Sore Throat
+Causes: viral infection (most common), strep bacteria, allergies.
+Symptoms: Pain/scratch when swallowing, red swollen tonsils, white patches (if bacterial), hoarse voice.
+
+### Body Pain / Muscle Aches
+Common with viral infections like flu and COVID-19.
+Causes: Physical activity, dehydration, flu, fibromyalgia, vitamin D deficiency.
+
+### Nausea and Vomiting
+Common causes: Food poisoning, viral infection, motion sickness, pregnancy (morning sickness), medication side effects.
+Hydrate with small sips. Avoid solid food until stable.
+
+### Fatigue / Weakness
+Persistent tiredness not relieved by rest can indicate anemia, thyroid problems, diabetes, or depression.
+If fatigue is sudden and severe — seek medical attention.
+
+---
+
+## Basic Home Remedies
+
+### For Fever
+- Rest and stay hydrated (water, ORS, coconut water, soups).
+- Sponging with lukewarm (not cold) water helps reduce temperature.
+- Wear light breathable clothing.
+- Paracetamol (acetaminophen) as directed for adults reduces fever and discomfort.
+- Do NOT use aspirin in children (risk of Reye's syndrome).
+
+### For Headache
+- Rest in a quiet, dark room.
+- Apply a cold or warm compress to the forehead or neck.
+- Stay hydrated — dehydration is a major trigger.
+- Over-the-counter options: Paracetamol, Ibuprofen (with food).
+- Avoid screen time, loud noise, and strong smells.
+- For migraines: sleep, darkness, and cold compress are key.
+
+### For Cold and Runny Nose
+- Rest and drink warm fluids (ginger tea, honey-lemon water, warm soups).
+- Steam inhalation to relieve congestion.
+- Saltwater gargle for sore throat (1/2 tsp salt in a glass of warm water).
+- Honey (for adults and children >1 year) soothes the throat.
+- Saline nasal drops help relieve nasal congestion.
+
+### For Cough
+- Honey and warm water or honey-lemon tea (effective and safe).
+- Steam inhalation with a towel over the head.
+- Warm fluids thin the mucus.
+- Elevate head while sleeping to ease nighttime cough.
+- Dry cough: Cough suppressants (Dextromethorphan-based syrups) with caution.
+- Wet cough: Expectorants (Guaifenesin) help loosen mucus.
+
+### For Sore Throat
+- Gargle with warm salt water 3–4 times daily.
+- Honey and ginger tea.
+- Throat lozenges or sprays for temporary relief.
+- Warm soups and cold ice pops can both help soothe.
+
+### For Stomach Pain / Indigestion
+- Eat bland foods (BRAT diet): Bananas, Rice, Applesauce, Toast.
+- Avoid spicy, fatty, or acidic foods.
+- Antacids for indigestion/heartburn.
+- Peppermint or ginger tea for gas/bloating.
+- Smaller, more frequent meals.
+
+### For Diarrhea
+- Oral Rehydration Solution (ORS) — critical to prevent dehydration.
+- BRAT diet: Bananas, Rice, Applesauce, Toast.
+- Avoid dairy, fatty, or high-fiber foods until recovered.
+- Probiotics (yogurt with live cultures) help restore gut flora.
+
+### For Nausea
+- Small sips of water or ginger tea/ale.
+- Ginger (in any form) is well evidence for nausea.
+- Avoid strong smells.
+- Eat bland, small portions.
+- Rest with head slightly elevated.
+
+### For Body Pain / Muscle Aches
+- Rest the affected area.
+- Warm or cold compress (ice for acute injury, heat for muscle soreness).
+- Gentle stretching.
+- Ibuprofen or Paracetamol for pain relief.
+- Stay hydrated.
+
+---
+
+## First Aid Tips
+
+### Cuts and Minor Wounds
+1. Stop the bleeding: Apply gentle pressure with a clean cloth or bandage for 10–15 minutes.
+2. Clean the wound: Rinse with clean running water. Avoid hydrogen peroxide on the wound (it can damage tissue).
+3. Apply antibiotic ointment (e.g., Neosporin/Bacitracin) if available.
+4. Cover with a sterile bandage.
+5. Change bandage daily. Watch for signs of infection: redness, swelling, pus, warmth, fever.
+6. See a doctor if: wound is deep, edges won't close, caused by a rusty object (tetanus risk), or sign of infection.
+
+### Burns
+- Minor (1st degree — red, no blister): Cool under cold running water for 10–20 minutes. Do NOT use ice, butter, or toothpaste.
+- Cover with sterile non-stick dressing.
+- Aloe vera gel can soothe minor burns.
+- See a doctor: burns larger than palm size, burns on face/hands/genitals/joints, blistering (2nd degree), charred/whitened skin (3rd degree).
+
+### Choking (Adult / Child > 1 year)
+1. If person is coughing forcefully — encourage them to keep coughing.
+2. If cannot cough/breathe: Stand behind them, give 5 firm back blows between shoulder blades.
+3. Then 5 abdominal thrusts (Heimlich maneuver): hands just above navel, sharp upward thrusts.
+4. Alternate back blows and abdominal thrusts until object is dislodged or emergency services arrive.
+
+### Choking (Infant < 1 year)
+- 5 back blows, then 5 chest thrusts (NOT abdominal).
+- Call emergency services immediately.
+
+### Sprains and Strains
+Follow R.I.C.E. method:
+- **Rest**: Avoid using the injured area.
+- **Ice**: Apply ice pack (wrapped in a cloth) for 15–20 min every 2–3 hours.
+- **Compression**: Wrap with elastic bandage to reduce swelling.
+- **Elevation**: Keep injured limb raised above heart level.
+- See a doctor if severe pain, inability to bear weight, or suspected fracture.
+
+### Fainting
+1. Lay the person flat on their back. Elevate legs 12 inches if no suspected spinal injury.
+2. Loosen tight clothing around neck/waist.
+3. Do not give anything by mouth until fully conscious.
+4. If not breathing — begin CPR and call emergency services.
+5. See a doctor after fainting to find the cause.
+
+### Nosebleed
+1. Sit upright and lean slightly forward (not back).
+2. Pinch the soft part of the nose firmly for 10–15 minutes without releasing.
+3. Breathe through the mouth.
+4. Do NOT tilt head back (blood may go down throat).
+5. See a doctor if: bleeding doesn't stop in 20 minutes, caused by head injury, or very heavy.
+
+### Allergic Reaction
+- Mild: Antihistamines (Loratadine, Cetirizine) for hives/itching.
+- Anaphylaxis (severe): Hives + swelling of throat + difficulty breathing — use Epinephrine auto-injector (EpiPen) if available and call emergency services IMMEDIATELY.
+
+### Eye Injury / Foreign Object in Eye
+- Do NOT rub the eye.
+- Flush with clean water or saline for 15–20 minutes.
+- Seek medical care if object is embedded or vision is affected.
+
+### Bee Sting
+1. Remove stinger by scraping sideways (do NOT use tweezers — squeezes more venom).
+2. Wash with soap and water.
+3. Apply cold pack.
+4. Antihistamine for itching/swelling.
+5. Seek emergency care if signs of allergic reaction (difficulty breathing, swelling of throat).
+
+---
+
+## Medicine Usage (Basic & Safe)
+
+### Paracetamol (Acetaminophen) — e.g., Crocin, Tylenol, Dolo 650
+- **Used for**: Fever, mild-to-moderate pain (headache, body ache, toothache).
+- **Adult dose**: 500mg–1000mg every 4–6 hours. Maximum 4000mg per day.
+- **Children**: Weight-based dosing — consult packaging or doctor.
+- **Caution**: Do NOT exceed recommended dose. Avoid alcohol. Dangerous in overdose (liver damage). Do NOT combine multiple products containing paracetamol.
+- **Safe during pregnancy**: Yes, at recommended doses.
+
+### Ibuprofen — e.g., Brufen, Advil, Nurofen
+- **Used for**: Fever, inflammation, pain (headache, muscle ache, menstrual cramps, minor arthritis).
+- **Adult dose**: 200mg–400mg every 4–6 hours with food. Maximum 1200mg/day (OTC).
+- **Caution**: Take with food to protect stomach. Avoid if: kidney problems, stomach ulcers, heart disease, pregnancy (3rd trimester). Not for children under 6 months.
+
+### Antacids — e.g., Gelusil, Gaviscon, Mylanta
+- **Used for**: Heartburn, acid reflux, indigestion, stomach upset.
+- Take 30–60 minutes after meals or as needed.
+- Do not take within 2 hours of other medications (reduces absorption).
+
+### Oral Rehydration Salts (ORS) — e.g., Electral, WHO-ORS
+- **Used for**: Dehydration from diarrhea, vomiting, fever, heat exposure.
+- Mix one sachet in 1 liter of clean water. Sip slowly throughout the day.
+- Safe for all ages. Essential for children with diarrhea.
+
+### Antihistamines — e.g., Cetirizine (Zyrtec), Loratadine (Clarityn)
+- **Used for**: Allergies, hay fever, hives, itching, runny nose.
+- Cetirizine 10mg once daily; Loratadine 10mg once daily (non-drowsy).
+- Older antihistamines (Chlorpheniramine/Benadryl) can cause drowsiness — avoid driving.
+
+### Cough Syrup Types
+- **Expectorant** (e.g., Guaifenesin/Mucinex): For wet productive cough — thins and loosens mucus.
+- **Suppressant** (e.g., Dextromethorphan): For dry non-productive cough — reduces urge to cough.
+- **Combination**: Many syrups combine both — read labels carefully.
+- Children under 4: Do NOT use adult cough medicines. Consult a pediatrician.
+
+### Saline Nasal Spray / Drops
+- Safe for all ages including infants.
+- Moisturizes nasal passages and relieves congestion.
+- Can be used multiple times per day.
+
+### Probiotics — e.g., Enterogermina, Lactobacillus-based supplements
+- **Used for**: Restoring gut flora after antibiotic use, reducing diarrhea duration, general digestive health.
+- Take with or after meals. Refrigerate if required.
+
+### Topical Antiseptics — e.g., Povidone-Iodine (Betadine), Chlorhexidine
+- **Used for**: Cleaning minor cuts and wounds.
+- Apply to clean wound, let dry.
+- Do not use extensively inside deep wounds.
+
+---
+
+## When to Seek Emergency Medical Care IMMEDIATELY
+
+Call emergency services (ambulance/911/108) if you notice:
+- Chest pain, pressure, or tightness (possible heart attack)
+- Sudden numbness/weakness on one side of body or face (possible stroke)
+- Difficulty breathing or shortness of breath at rest
+- High fever above 104°F (40°C) unresponsive to medication
+- Seizures or loss of consciousness
+- Severe allergic reaction (throat swelling, difficulty breathing)
+- Severe abdominal pain, vomiting blood
+- Uncontrolled bleeding
+- Signs of severe dehydration (no urine, sunken eyes, rapid heartbeat)
+- Any symptom that is sudden, severe, or worsening rapidly
+
+---
+
+## General Health and Wellness Tips
+
+- Drink 8–10 glasses of water daily.
+- Eat a balanced diet rich in vegetables, fruits, whole grains, and lean protein.
+- Sleep 7–9 hours per night.
+- Exercise at least 30 minutes most days.
+- Wash hands frequently with soap and water — the single most effective disease prevention step.
+- Do not self-medicate with antibiotics — they only work for bacterial infections, not viruses.
+- Keep a regular health check-up schedule even when feeling well.
+- Manage stress through relaxation techniques, walking, meditation, or hobbies.
+- Always read medication labels and complete the full prescribed course.
+- Store medicines safely away from children and heat/moisture.
