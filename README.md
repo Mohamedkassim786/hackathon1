@@ -4,26 +4,27 @@
 
 ---
 
-## 🚀 What It Does
+## 🚀 Key Features
 
 ArogyaAI provides instant, voice-driven guidance on common symptoms, first aid, and basic medicine usage. 
-It uses a completely local RAG (Retrieval-Augmented Generation) pipeline, meaning no sensitive health questions ever leave the user's computer.
 
-### Key Accessibility Features:
-- **Continuous Voice Loop**: Tap the mic once, and it stays locked in a conversational loop. It listens, processes, speaks the answer aloud, and instantly starts listening again.
-- **Hands-Free & Big UI**: Giant pulsing microphone, large fonts (20px base), and high-contrast design.
-- **Prescription Reader**: Upload a photo of a medical prescription, and ArogyaAI will use OCR to read and explain it simply.
+- **🗣️ Bilingual Voice Loop**: Deeply integrated English and Tamil support. Tap the mic once for a hands-free conversational loop that listens, processes, and speaks back.
+- **🚨 Emergency Protocol**: Automatically detects life-threatening symptoms (e.g., chest pain, breathing difficulty) and provides immediate, high-priority emergency instructions.
+- **💊 Medication Reminders**: Users can set reminders via voice or text (e.g., "[REMINDER: Dolo 650, 08:30]"), which the assistant will announce at the correct time.
+- **📸 Prescription Reader**: Advanced OCR (Tesseract) that scans medical prescriptions and explains dosage and purpose in simple terms.
+- **👴 Elderly Mode**: A high-contrast, large-font interface specifically designed for low-vision and elderly users.
+- **🔒 100% Private & Local**: Uses a local RAG pipeline and Ollama (Llama 3), ensuring health data never leaves the device.
 
 ---
 
 ## 🏗️ Architecture
 
 ```
-Voice Input (Web Speech API) → Streamlit → LangChain Orchestrator
-                                              ↓              ↓
-                                       FAISS Vector DB    Ollama LLM (Llama 3)
-                                              ↓              ↓
-                        Voice Output (TTS) ← AI Response ← Health Knowledge Base
+Voice Input (Faster-Whisper) → Streamlit → LangChain Orchestrator
+                                               ↓              ↓
+                                        FAISS Vector DB    Ollama LLM (Llama 3)
+                                               ↓              ↓
+                        Voice Output (Edge-TTS) ← AI Response ← Health Knowledge Base
 ```
 
 ---
@@ -32,13 +33,14 @@ Voice Input (Web Speech API) → Streamlit → LangChain Orchestrator
 
 | Layer | Technology |
 |---|---|
-| **Frontend** | Streamlit (Custom JS / CSS for Voice) |
-| **Voice** | Native Browser Web Speech API (STT & TTS) |
+| **Frontend** | Streamlit (Custom Glassmorphic CSS) |
+| **STT (Speech-to-Text)** | OpenAI Faster-Whisper (Local) |
+| **TTS (Text-to-Speech)** | Microsoft Edge-TTS (Offline-ready) |
+| **LLM (Brain)** | Ollama — Llama 3 (Local) |
+| **Embeddings** | Ollama Embeddings |
+| **Vector Store** | FAISS |
 | **OCR** | Tesseract & Pillow (`pytesseract`) |
 | **Orchestration** | LangChain (LCEL) |
-| **Vector Store** | FAISS |
-| **LLM** | Ollama — Llama 3 (Local) |
-| **Embeddings** | Ollama Embeddings |
 
 ---
 
@@ -48,9 +50,8 @@ Voice Input (Web Speech API) → Streamlit → LangChain Orchestrator
 - [Python 3.11+](https://www.python.org/downloads/)
 - [Ollama](https://ollama.com/) installed and running locally.
 - **Tesseract OCR**: Required for the prescription reading feature.
-  - *Windows*: Download and install from [UB-Mannheim Tesseract](https://github.com/UB-Mannheim/tesseract/wiki).
-  - *Linux*: `sudo apt install tesseract-ocr`
-  - *Mac*: `brew install tesseract`
+  - *Windows*: Download from [UB-Mannheim Tesserract](https://github.com/UB-Mannheim/tesseract/wiki).
+  - *Note*: Ensure the path is set in `.env` or `app.py`.
 
 ### 2. Pull the LLM Model
 ```bash
@@ -66,31 +67,31 @@ pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
-*Note: Please use Google Chrome or Microsoft Edge for full Voice API support. Firefox is not fully supported.*
 
 ---
 
 ## 📁 Project Structure
 
 ```
-├── app.py            # Main Streamlit UI, Voice Javascript handlers, Layout
-├── rag_utils.py      # RAG pipeline + System Prompts + Safety Guardrails
-├── health_data.txt   # Medical knowledge base (Symptoms, First Aid, etc.)
-├── requirements.txt  # Python dependencies (includes pytesseract & Pillow)
-└── README.md         # Documentation
+├── app.py            # Main application UI & Voice Pipeline logic
+├── rag_utils.py      # RAG orchestrator, System Prompts, & Safety Logic
+├── health_data.txt   # Medical Knowledge Base (Symptoms, Remedies, First Aid)
+├── voice/            # Voice Engine (STT: Whisper, TTS: Edge-TTS)
+├── data/             # FAISS Vector Index storage
+└── requirements.txt  # Project dependencies
 ```
 
 ---
 
 ## 🛡️ Medical Safety Guardrails
 
-ArogyaAI is programmed with strict safety guardrails:
-1. It will **never** attempt to diagnose a disease.
-2. It prioritizes severe symptom recognition and will aggressively recommend visiting a doctor or calling emergency services for warning signs (e.g., chest pain, severe bleeding).
-3. All advice is generalized from the internal database and includes disclaimers that it is not a substitute for professional medical care.
+ArogyaAI is programmed with strict safety protocols:
+1. **No Diagnosis**: It never attempts to diagnose a disease officially.
+2. **Emergency Recognition**: It aggressively detects emergency triggers and recommends immediate medical intervention.
+3. **Internal Database Only**: All advice is strictly derived from the validated `health_data.txt` knowledge base.
 
 ---
 
-## 📚 Updating the Knowledge Base
+## 📚 Knowledge Management
 
-To add more medical context, simply edit `health_data.txt`. The FAISS vector database will automatically rebuild the next time you start the app.
+To update the assistant's medical knowledge, simply edit `health_data.txt`. The system will automatically re-index the data on the next startup.

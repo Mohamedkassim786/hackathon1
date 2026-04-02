@@ -4,98 +4,117 @@ import scipy.io.wavfile as wav
 from faster_whisper import WhisperModel
 import os
 import time
+import tempfile
 
-# Model configuration
-MODEL_SIZE = "base"  # "base", "small", "md" for local
-DEVICE = "cpu"      # Use "cuda" if GPU is available
-COMPUTE_TYPE = "int8"
+def is_tamil(text):
+    """Detect if text contains Tamil characters using Unicode range."""
+    for char in text:
+        if '\u0b80' <= char <= '\u0bff':
+            return True
+    return False
 
 class SpeechToText:
-    def __init__(self):
-        print(f"--- Loading Whisper Model: {MODEL_SIZE} ---")
-        self.model = WhisperModel(MODEL_SIZE, device=DEVICE, compute_type=COMPUTE_TYPE)
-        self.temp_file = "temp_stt.wav"
-        self.stop_requested = False
-
-    def record_audio(self, duration=5, samplerate=16000):
-        """Records audio from the microphone."""
-        print(f"--- Recording for {duration} seconds... ---")
-        audio_data = sd.rec(int(duration * samplerate), samplerate=samplerate, channels=1, dtype='int16')
-        sd.wait()
-        wav.write(self.temp_file, samplerate, audio_data)
-        return self.temp_file
-
-    def listen_until_silence(self, samplerate=16000, silence_threshold=300, silence_duration=0.8, interrupt_check=None):
-        """Records until silence is detected OR interrupt_check returns True."""
-        print(f"--- Listening (Thresh: {silence_threshold})... ---")
-        chunk_size = 1024
-        audio_buffer = []
-        has_spoken = False
-        start_time = time.time()
-        max_duration = 15 # Max 15 seconds per turn
+    def __init__(self, model_size="medium"):
+        # Robust initialization with fallback to smaller models if medium fails (network/RAM)
+        self.temp_file = os.path.join(tempfile.gettempdir(), "stt_temp.wav")
+        # Enriched Tamil medical prompt with common symptoms
+        self.initial_prompt = (
+            "வணக்கம் Dr, எனக்கு தலைவலி, காய்ச்சல், வயிற்று வலி மற்றும் உடல் சோர்வாக உள்ளது. "
+            "Medical conversation about headache, fever, stomach pain, and fatigue in Tamil and English."
+        )
         
-        with sd.InputStream(samplerate=samplerate, channels=1, dtype='int16') as stream:
-            silent_chunks = 0
+        models_to_try = [model_size, "small", "tiny"]
+        self.model = None
+        
+        for size in models_to_try:
+            try:
+                print(f"--- Attempting to load STT model: {size} ---")
+                self.model = WhisperModel(size, device="cpu", compute_type="int8")
+                print(f"--- Successfully loaded STT model: {size} ---")
+                break
+            except Exception as e:
+                print(f"--- Failed to load model {size}: {e} ---")
+                if size == models_to_try[-1]:
+                    print("--- CRITICAL: No STT models could be loaded. ---")
+                    raise e
+
+    def listen_until_silence(self, silence_threshold=600, silence_duration=2.2, interrupt_check=None, on_loop=None):
+        """Records audio until silence is detected or interrupted."""
+        CHUNK = 1024
+        RATE = 16000
+        
+        print("--- Listening... ---")
+        frames = []
+        silent_chunks = 0
+        max_silent_chunks = int(silence_duration * RATE / CHUNK)
+        min_frames = int(0.5 * RATE / CHUNK) # At least 0.5s
+        
+        with sd.InputStream(samplerate=RATE, channels=1, dtype='int16') as stream:
             while True:
-                # 1. Check for manual STOP
+                if on_loop: on_loop() # Run background tasks (like reminders)
+                
                 if interrupt_check and interrupt_check():
-                    print("--- Listening interrupted ---")
                     return None
+                    
+                data, overflowed = stream.read(CHUNK)
+                frames.append(data.copy())
                 
-                # 2. Check for global timeout
-                if time.time() - start_time > max_duration:
-                    print("--- Maximum recording duration reached ---")
-                    break
-
-                data, overflowed = stream.read(chunk_size)
-                audio_buffer.append(data.copy())
-                
-                # 3. Detect volume
-                max_vol = np.max(np.abs(data))
-                if max_vol > silence_threshold:
-                    if not has_spoken:
-                        print("--- Speech detected! ---")
-                    has_spoken = True
-                    silent_chunks = 0
+                # Simple silence detection
+                rms = np.sqrt(np.mean(data.astype(np.float32)**2))
+                if rms < silence_threshold:
+                    silent_chunks += 1
                 else:
-                    if has_spoken:
-                        silent_chunks += 1
+                    silent_chunks = 0
                 
-                # 4. Detect end of speech (silence after speaking)
-                if has_spoken and (silent_chunks > (silence_duration * samplerate / chunk_size)):
-                    print("--- End of speech detected ---")
+                if len(frames) > min_frames and silent_chunks > max_silent_chunks:
                     break
-                
-                # 5. Safety: No speech at all for 10 seconds
-                if not has_spoken and (time.time() - start_time > 10):
-                    print("--- No speech detected, stopping ---")
-                    return None
-
-        if not audio_buffer or not has_spoken:
-            return None
-            
-        audio_data = np.concatenate(audio_buffer, axis=0)
-        wav.write(self.temp_file, samplerate, audio_data)
+        
+        if not frames: return None
+        
+        audio_data = np.concatenate(frames)
+        wav.write(self.temp_file, RATE, audio_data)
         return self.temp_file
 
-    def transcribe(self, audio_path=None):
-        """Transcribes audio to text."""
-        path = audio_path or self.temp_file
-        if not os.path.exists(path):
-            return ""
-        
-        segments, info = self.model.transcribe(path, beam_size=5)
-        text = " ".join([segment.text for segment in segments]).strip()
-        
-        # Cleanup
-        if os.path.exists(path):
-            os.remove(path)
+    def transcribe(self, audio_path):
+        """Transcribes audio and filters out Whisper hallucinations."""
+        if not audio_path or not os.path.exists(audio_path):
+            return "", "en"
             
-        return text
+        segments, info = self.model.transcribe(
+            audio_path, 
+            beam_size=5, 
+            initial_prompt=self.initial_prompt
+        )
+        text = "".join([s.text for s in list(segments)]).strip()
+        
+        # --- Hallucination Filter ---
+        hallucinations = [
+            "Thank you for watching", "Thanks for watching", 
+            "Subscribe to my channel", "Please like and subscribe",
+            "Medical assistant conversation", "வணக்கம் Dr" # Echoes of the prompt
+        ]
+        
+        # If the result is just a hallucination or exactly the prompt, ignore it
+        for h in hallucinations:
+            if h.lower() in text.lower() and len(text) < len(h) + 10:
+                print(f"--- Filtered Hallucination: {text} ---")
+                text = ""
+                break
+        
+        if not text or len(text) < 2:
+            return "", "en"
+
+        # Determine language for TTS: priority to whisper's info, fallback to Unicode
+        lang = "ta" if info.language == "ta" or is_tamil(text) else "en"
+        
+        print(f"--- Decoded ({lang}): {text} ---")
+        try:
+            os.remove(audio_path)
+        except: pass
+        return text, lang
 
 # Singleton instance
 stt_engine = None
-
 def get_stt_engine():
     global stt_engine
     if stt_engine is None:

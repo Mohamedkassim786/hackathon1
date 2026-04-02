@@ -10,6 +10,6 @@ Pillow
 edge-tts
 faster-whisper
 sounddevice
-pygame
 scipy
 numpy
+nest-asyncio

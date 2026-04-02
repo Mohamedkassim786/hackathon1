@@ -268,3 +268,131 @@ Call emergency services (ambulance/911/108) if you notice:
 - Manage stress through relaxation techniques, walking, meditation, or hobbies.
 - Always read medication labels and complete the full prescribed course.
 - Store medicines safely away from children and heat/moisture.
+
+---
+
+## தமிழ் மருத்துவ தகவல்கள் (Tamil Healthcare Information)
+
+### காய்ச்சல் (Fever)
+உடல் சூடு அதிகமா இருந்தா அது காய்ச்சல். 
+- சாதாரண காய்ச்சல்: 99°F–100.4°F
+- அதிகமான காய்ச்சல்: 102.2°F மேல
+- என்ன பண்ணணும்: நல்லா ஓய்வு எடுங்க, நிறைய தண்ணீர் குடிங்க. லேசான துணியை போடுங்க.
+- எப்போ டாக்டர் கிட்ட போகணும்: மூச்சு விட கஷ்டமா இருந்தா இல்ல காய்ச்சல் 104°F மேல போனா உடனே போங்க.
+
+### தலை வலி (Headache)
+தலை வலி பல காரணத்தால வரும்.
+- என்ன பண்ணணும்: அமைதியான, இருட்டான இடத்துல ஓய்வு எடுங்க. நெத்தியில சூடான இல்லனா குளிர்ந்த துணியை வைங்க.
+- தண்ணீர் நிறைய குடிங்க, ஏன்னா உடம்புல நீர் சத்து கம்மியா இருந்தா கூட தலை வலி வரும்.
+- ரொம்ப அதிகமா இருந்தா Paracetamol மாத்திரை போடலாம்.
+
+### சளி மற்றும் இருமல் (Cold and Cough)
+- என்ன பண்ணணும்: இஞ்சி டீ, தேன் கலந்த சுடுதண்ணீர் குடிங்க.
+- ஆவி பிடிங்க (Steam inhalation).
+- உப்பு தண்ணியில வாய் கொப்பளிங்க.
+- இருமல் அதிகமா இருந்தா தூங்கும் போது தலையை கொஞ்சம் உயர்த்தி வச்சு தூங்குங்க.
+
+### வயிற்று வலி (Stomach Pain)
+- செரிமானம் ஆகலனா இல்ல கேஸ் இருந்தா வயிறு வலிக்கும்.
+- என்ன பண்ணணும்: மோர் குடிங்க, இஞ்சி சாறு குடிங்க. காரமான சாப்பாட்டை தவிர்க்கவும்.
+- ரொம்ப அதிகமா வலிச்சா டாக்டர் கிட்ட போங்க.
+
+### உடல் வலி (Body Pain)
+- ஓய்வு இல்லாம இருந்தா இல்ல காய்ச்சல் வந்தா உடல் வலி வரும்.
+- என்ன பண்ணணும்: நல்லா ஓய்வு எடுங்க. சுடுதண்ணியில குளிங்க.
+- ### உடல் நல ஆலோசனை (Conversational Q&A)
+
+User: வயிற்று வலி அதிகமா இருக்கு.
+AI: ஐயையோ, ரொம்ப வலிக்குதா? பயப்படாதிங்க. முதல்ல காரமான சாப்பாட்டை தவிர்த்துடுங்க. சுடு தண்ணி இல்லைனா மோர் குடிங்க, கொஞ்சம் இதமா இருக்கும். வலி எவ்வளவு நேரமா இருக்கு?
+
+User: எனக்கு காய்ச்சல் இருக்கு.
+AI: காய்ச்சலா? பயப்படாதிங்க. உடம்பை ரொம்ப வருத்திக்காதீங்க, நல்லா படுத்து ஓய்வு எடுங்க. இட்லி மாதிரி லேசான சாப்பாடு சாப்பிடுங்க. காய்ச்சல் 102 டிகிரி மேல இருக்கா?
+
+User: சளி பிடிச்சிருக்கு, இருமல் வருது.
+AI: சளியா? அடிக்கடி சுடு தண்ணி குடிங்க. ஆவி பிடிச்சா மூச்சு விட சுலபமா இருக்கும். இருமல் ரொம்ப அதிகமா இருக்கா? உங்களுக்கு வேற என்ன தொந்தரவு இருக்கு?
+
+User: தலை வலி தாங்க முடியல.
+AI: தலை வலியா? கவலைப்படாதீங்க. அமைதியான இடத்துல கொஞ்சம் நேரம் தூங்குங்க. தண்ணீர் நிறைய குடிங்க. வலி ரொம்ப அதிகமா இருந்தா சொல்லுங்க.
+
+User: உடம்பு ரொம்ப வலிக்குது.
+AI: உடல் வலியா? ரொம்ப கஷ்டமா இருக்கா? நல்லா ஓய்வு எடுங்க, சுடு தண்ணியில குளிக்கலாம். காய்ச்சல் இருக்கா உங்களுக்கு?
+
+--- Conversational Sample: Stomach Pain ---
+உடல்நிலை: வயிற்று வலி (Stomach Pain)
+நோயாளி: டாக்டர், வயிறு ரொம்ப வலிக்குது, என்ன பண்ணலாம்?
+டாக்டர்: கவலைப்படாதீங்க. என்ன சாப்பிட்டீங்க? வயிறு உப்பசமா இருக்கா?
+பார்வை: மோருல கொஞ்சம் சீரகம் போட்டு குடிங்க. காரம் கம்மியா சாப்பிடுங்க.
+
+--- Conversational Sample: General Weakness ---
+உடல்நிலை: உடல் சோர்வு (General Weakness)
+நோயாளி: ரொம்ப டயர்டா இருக்கு டாக்டர், உடம்புல தெம்பே இல்ல.
+டாக்டர்: வெயில்ல அதிகமா அலைஞ்சீங்களா? சரியா சாப்பிட்டீங்களா?
+பார்வை: இளநீர் குடிங்க, சத்தான பழங்கள் சாப்பிடுங்க. நல்லா தூங்கி ஓய்வு எடுங்க.
+
+--- Conversational Sample: Skin Allergy ---
+உடல்நிலை: தோல் அரிப்பு (Skin Allergy)
+நோயாளி: உடம்புல அங்கங்க அரிக்குது, சிவந்து போயிருக்கு.
+டாக்டர்: புதுசா எதாவது சோப்பு இல்லனா ஆயில் யூஸ் பண்ணீங்களா?
+பார்வை: அரிப்பு இருக்க இடத்துல தேங்காய் எண்ணெய் தடவுங்க. ரொம்ப தேய்க்காதீங்க.
+
+--- Condition: Diabetes (சர்க்கரை நோய்) ---
+English: Diabetes is a chronic condition that affects how your body turns food into energy. Symptoms include increased thirst, frequent urination, and blurred vision.
+Tamil: சர்க்கரை நோய் என்பது உடலில் இன்சுலின் பற்றாக்குறையால் இரத்தத்தில் சர்க்கரை அளவு அதிகரிப்பதை குறிக்கும். அதிக தாகம், அடிக்கடி சிறுநீர் கழித்தல் ஆகியவை இதன் அறிகுறிகள்.
+Advice: Avoid sugary foods, exercise regularly, and monitor your blood sugar.
+
+--- Condition: Hypertension (இரத்த அழுத்தம்) ---
+English: Hypertension or high blood pressure is a long-term medical condition in which the blood pressure in the arteries is persistently elevated.
+Tamil: இரத்த அழுத்தம் அதிகரிப்பதனால் இதய நோய்கள் மற்றும் பக்கவாதம் ஏற்படும் அபாயம் உள்ளது. உப்பு மற்றும் வறுத்த உணவுகளை தவிர்க்கவும்.
+Advice: Reduce salt intake, maintain a healthy weight, and manage stress.
+
+--- Condition: Common Cold (சாதாரண சளி) ---
+English: A viral infection of your nose and throat (upper respiratory tract).
+Tamil: மூக்கடைப்பு, தும்மல் மற்றும் தொண்டை வலி ஆகியவை இதன் முக்கிய அறிகுறிகள்.
+Advice: Rest well, drink warm fluids, and steam inhalation can help.
+
+--- Condition: Stomach Ulcer (வயிற்றுப் புண்) ---
+English: Open sores that develop on the inside lining of your stomach.
+Tamil: வயிற்றில் எரிச்சல் மற்றும் வலி ஏற்படும். காரமான உணவுகளை தவிர்க்கவும்.
+Advice: Eat small frequent meals, avoid alcohol and smoking, and stay away from spicy food.
+
+--- Condition: Asthma (ஆஸ்துமா) ---
+English: A condition in which your airways narrow and swell and may produce extra mucus.
+Tamil: மூச்சு விடுவதில் சிரமம் மற்றும் இருமல் ஏற்படும். தூசி மற்றும் புகையை தவிர்க்கவும்.
+Advice: Use prescribed inhalers, avoid triggers like pollen and dust, and stay calm during attacks.
+
+--- Condition: Anemia (இரத்த சோகை) ---
+English: A condition in which you lack enough healthy red blood cells to carry adequate oxygen to your body's tissues.
+Tamil: உடலில் இரும்புச்சத்து குறைபாட்டினால் இரத்த சோகை ஏற்படும். சோர்வு மற்றும் மயக்கம் இதன் அறிகுறிகள்.
+Advice: Eat iron-rich foods like spinach, dates, and beetroot.
+
+--- Conversational Case: Child Fever ---
+Q: குழந்தைக்கு காய்ச்சல் 100 டிகிரி இருக்கு டாக்டர், என்ன பண்ணலாம்? (My child has 100F fever, what to do?)
+A: கவலைப்படாதீங்க. குழந்தைக்கு நல்லா சத்தான கஞ்சி கொடுங்க. மெல்லிய துணியை நனைத்து நெற்றியில் ஒத்தி எடுங்க. சூடு தண்ணி குடிக்க வைங்க. 102 டிகிரிக்கு மேல போனா உடனே பீடியாட்ரிஷியன் கிட்ட கூட்டிட்டு போங்க.
+
+--- Conversational Case: Back Pain ---
+Q: ரொம்ப நேரமா உட்கார்ந்து வேலை பாக்குறதால முதுகு வலிக்குது. (Back pain due to sitting for long hours.)
+A: வேலையில சின்ன இடைவெளி எடுங்க. நேராக உட்கார பழகுங்க. வெந்நீர் ஒத்தடம் கொடுங்க. வலி குறையலனா பிசியோதெரபிஸ்ட் பாருங்க.
+
+--- Conversational Case: Eye Strain ---
+Q: அதிக நேரம் போன் பாக்குறதால கண்ணு எரியுது. (Eye burning due to phone usage.)
+A: 20-20-20 விதியை பின்பற்றுங்க. அதாவது 20 நிமிஷத்துக்கு ஒருமுறை 20 அடி தூரத்தில் உள்ள பொருளை 20 செகண்ட் பாருங்க. கண்ணை அடிக்கடி சிமிட்டுங்க.
+
+--- Condition: Child Health (குழந்தை ஆரோக்கியம்) ---
+Advice: Pediatric fever above 102F needs immediate medical attention. Keep the child hydrated.
+Tamil: காய்ச்சல் 102 டிகிரிக்கு மேல் இருந்தால் உடனடியாக மருத்துவரை அணுகவும்.
+
+--- Condition: Elder Care (முதியோர் பராமரிப்பு) ---
+Advice: Ensure regular checkups for BP and Sugar. Gentle walking for 20 minutes is recommended.
+Tamil: ரத்த அழுத்தம் மற்றும் சர்க்கரை அளவை அவ்வப்போது பரிசோதிக்கவும். 20 நிமிடம் நடைபயிற்சி செய்யவும்.
+
+--- Condition: First Aid (முதலுதவி) ---
+Advice: For minor burns, use cool running water. Do not apply ice directly.
+Tamil: தீக்காயங்களுக்கு குளிர்ந்த நீரை பயன்படுத்தவும். நேரடியாக ஐஸ் கட்டியை வைக்க வேண்டாம்.
+
+--- Conversational Case: Medication Side Effects ---
+Q: மாத்திரை சாப்பிட்டதும் அரிப்பு எடுக்குது. (Itching after taking medicine.)
+A: உடனே மாத்திரை சாப்பிடுவதை நிறுத்துங்க. இது அலர்ஜியா இருக்கலாம். உடனே டாக்டர் கிட்ட போயி அலர்ஜி பத்தி சொல்லுங்க.
+
+--- Conversational Case: Nutrition ---
+Q: ரத்தம் அதிகரிக்க என்ன சாப்பிடணும்? (What to eat to increase blood?)
+A: கீரை வகைகள், பேரிச்சம்பழம், அத்திப்பழம் மற்றும் முட்டை சாப்பிடுங்க. இதுல இரும்புச்சத்து அதிகமா இருக்கு.
